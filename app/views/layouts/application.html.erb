@@ -11,7 +11,18 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <%= content_tag :div, id: "root", 
+      data: {
+        name: "ゾウ",
+        age: 42,
+        login: @user,
+        root_path: root_path,
+        login_path: '/auth/auth0',
+        logout_path: 'auth/logout',
+        profile_path: profile_path
+      }.to_json do %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

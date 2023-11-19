@@ -5,13 +5,23 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import 'bootstrap';
 
-function App() {
+type Props = {
+  data: {
+    name: string
+    age: number
+    login: boolean
+    root_path: string
+    login_path: string
+    logout_path: string
+    profile_path: string
+  }
+}
+function App({data}: Props) {
   return (
     <>
       <Header 
-        login={1}
+        data={data}
       />
-      
       <Footer />
     </>
   )
@@ -19,11 +29,13 @@ function App() {
 
 const root = document.getElementById('root');
 if (!root) {
-  throw new Error('No root element');
+  throw new Error('No hello element');
 }
-const login = 0;
+const data = JSON.parse(String(root.getAttribute('data')));
 createRoot(root).render(
   <React.StrictMode>
-    <App />
+    <App 
+      data={data}
+    />
   </React.StrictMode>
 );

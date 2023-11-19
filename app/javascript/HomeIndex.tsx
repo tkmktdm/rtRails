@@ -12,11 +12,8 @@ function HomeIndex() {
         <p>text</p>
       </div>
     </div>
-    // <h1>Hello React!!!</h1>
   )
 }
-// ReactDOM.render(<HomeIndex />, document.getElementById('postIndex'));
-
 
 const root = document.getElementById('homeIndex');
 if (!root) {
